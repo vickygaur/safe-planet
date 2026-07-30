@@ -1,0 +1,24 @@
+DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Never serve the Vite source index.html from Apache
+  RewriteRule ^index\.html$ index.php [L]
+
+  RewriteRule ^api/ - [L]
+  RewriteRule ^admin/ - [L]
+
+  # Prefer copied root assets, then dist assets
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^assets/(.*)$ dist/assets/$1 [L]
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^favicon\.svg$ dist/favicon.svg [L]
+
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  RewriteRule ^ index.php [L]
+</IfModule>

@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", "Georgia", ui-serif, serif;
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+
+  --color-bg: var(--sp-bg);
+  --color-bg-elevated: var(--sp-bg-elevated);
+  --color-surface: var(--sp-surface);
+  --color-surface-2: var(--sp-surface-2);
+  --color-border: var(--sp-border);
+  --color-border-strong: var(--sp-border-strong);
+  --color-text: var(--sp-text);
+  --color-muted: var(--sp-muted);
+  --color-accent: var(--sp-accent);
+  --color-accent-2: var(--sp-accent-2);
+  --color-glow: var(--sp-glow);
+  --color-sky: var(--sp-sky);
+}
+
+:root {
+  --sp-bg: #f5f9fc;
+  --sp-bg-elevated: #ffffff;
+  --sp-surface: rgba(255, 255, 255, 0.86);
+  --sp-surface-2: #e8f1f7;
+  --sp-border: rgba(20, 40, 55, 0.08);
+  --sp-border-strong: rgba(20, 40, 55, 0.14);
+  --sp-text: #142433;
+  --sp-muted: #5d7080;
+  --sp-accent: #0e7c6b;
+  --sp-accent-2: #1a9b86;
+  --sp-glow: rgba(14, 124, 107, 0.18);
+  --sp-sky: #dceef8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--sp-bg);
+  color: var(--sp-text);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--sp-accent) 28%, transparent);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.glass {
+  background: var(--sp-surface);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--sp-border);
+}
+
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
