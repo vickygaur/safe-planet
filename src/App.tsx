@@ -11,7 +11,7 @@ import { images } from '@/data/images'
 export default function App() {
   return (
     <ThemeProvider>
-      <BrowserRouter basename="/safe-planet">
+      <BrowserRouter>
         <Routes>
           <Route element={<Layout />}>
             <Route index element={<HomePage />} />
