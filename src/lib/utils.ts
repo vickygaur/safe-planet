@@ -1,9 +1,12 @@
 import { clsx, type ClassValue } from 'clsx'
 import { twMerge } from 'tailwind-merge'
+import { assetUrl } from '@/lib/basePath'
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
+
+export { assetUrl }
 
 export const PRODUCTS = [
   'Aircon',
@@ -21,7 +24,7 @@ export async function submitLead(payload: {
   message?: string
   source_page?: string
 }) {
-  const res = await fetch(`${import.meta.env.BASE_URL}api/lead.php`, {
+  const res = await fetch(assetUrl('api/lead.php'), {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload),

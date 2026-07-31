@@ -1,6 +1,4 @@
-import { cn } from '@/lib/utils'
-
-const logoSrc = `${import.meta.env.BASE_URL}logo.png`
+import { cn, assetUrl } from '@/lib/utils'
 
 type Props = {
   className?: string
@@ -11,7 +9,7 @@ type Props = {
 export function Logo({ className, blend = true }: Props) {
   return (
     <img
-      src={logoSrc}
+      src={assetUrl('logo.png')}
       alt="Safe Planet"
       width={160}
       height={64}

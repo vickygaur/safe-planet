@@ -15,6 +15,9 @@ dist-ssr
 # dist/ is committed on purpose
 !dist/
 
+# Local/server secrets — copy from config.example.php
+api/config.php
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

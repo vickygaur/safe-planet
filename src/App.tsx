@@ -7,11 +7,14 @@ import { ContactPage } from '@/pages/ContactPage'
 import { ServicePage } from '@/pages/ServicePage'
 import { airconFaqs, hotWaterFaqs, solarFaqs } from '@/data/faqs'
 import { images } from '@/data/images'
+import { getRouterBasename } from '@/lib/basePath'
 
 export default function App() {
+  const basename = getRouterBasename()
+
   return (
     <ThemeProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={basename === '/' ? undefined : basename}>
         <Routes>
           <Route element={<Layout />}>
             <Route index element={<HomePage />} />

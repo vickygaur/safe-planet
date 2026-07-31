@@ -10,8 +10,26 @@ if (!is_file($distIndex)) {
     exit;
 }
 
+// Detect install path: /safe-planet/ locally, / on AWS domain root
+$scriptDir = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/'));
+$basePath = rtrim($scriptDir, '/');
+if ($basePath === '' || $basePath === '.' || $basePath === '/') {
+    $basePath = '/';
+} else {
+    $basePath .= '/';
+}
+
 $html = file_get_contents($distIndex);
 $html = str_replace(' crossorigin', '', $html);
+
+// Rewrite root-absolute asset URLs for subdirectory installs
+if ($basePath !== '/') {
+    $html = preg_replace('#\b(href|src)="/(?!/)#', '$1="' . $basePath, $html);
+}
+
+// Inject base path for React Router + API calls
+$inject = '<script>window.__BASE_PATH__=' . json_encode($basePath) . ';</script>';
+$html = str_replace('<head>', '<head>' . $inject, $html);
 
 header('Content-Type: text/html; charset=utf-8');
 header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
