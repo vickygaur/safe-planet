@@ -76,7 +76,7 @@ export function AboutPage() {
               <p className="mt-1 text-sm text-white/85">Happy Customers</p>
             </div>
             <div className="rounded-2xl bg-white/15 p-4 backdrop-blur-md ring-1 ring-white/20">
-              <Counter to={8} suffix="+" />
+              <Counter to={9} suffix="+" />
               <p className="mt-1 text-sm text-white/85">Years Of Experience</p>
             </div>
           </div>
@@ -137,10 +137,10 @@ export function AboutPage() {
 
         <div className="mx-auto mt-14 grid max-w-7xl grid-cols-2 gap-4 px-4 sm:px-6 md:grid-cols-4">
           {[
-            { to: 8, suffix: '+', label: 'Years of Industry Experience' },
-            { to: 500, suffix: '+', label: 'Heat Pump Installations' },
-            { to: 800, suffix: '+', label: 'Air Conditioning Installations' },
-            { to: 5, suffix: 'k+', label: 'Rebates Processed' },
+            { to: 9, suffix: '+', label: 'Years of Industry Experience' },
+            { to: 200, suffix: '+', label: 'Heat Pump Installations' },
+            { to: 200, suffix: '+', label: 'Air Conditioning Installations' },
+            { to: 500, suffix: 'k+', label: 'Rebates Processed' },
           ].map((s, i) => (
             <FadeIn key={s.label} delay={i * 0.05}>
               <div className="rounded-3xl bg-bg p-5 ring-1 ring-border">

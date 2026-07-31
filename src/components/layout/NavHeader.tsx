@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X, Phone } from 'lucide-react'
+import { Logo } from '@/components/ui/Logo'
 import { cn } from '@/lib/utils'
 
 const links = [
@@ -53,18 +54,8 @@ export function NavHeader() {
       )}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 sm:px-6">
-        <Link to="/" className="group flex items-center gap-3">
-          <span className="grid h-10 w-10 place-items-center rounded-xl bg-accent font-display text-sm font-bold text-white">
-            SP
-          </span>
-          <span
-            className={cn(
-              'font-display text-lg font-semibold tracking-tight',
-              onHero ? 'text-white' : 'text-text',
-            )}
-          >
-            Safe Planet
-          </span>
+        <Link to="/" className="group flex shrink-0 items-center">
+          <Logo className="h-14 sm:h-16 md:h-[4.5rem]" blend />
         </Link>
 
         <nav

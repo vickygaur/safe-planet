@@ -14,6 +14,10 @@ DirectoryIndex index.php
   RewriteRule ^assets/(.*)$ dist/assets/$1 [L]
 
   RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^favicon\.png$ dist/favicon.png [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^logo\.png$ dist/logo.png [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
   RewriteRule ^favicon\.svg$ dist/favicon.svg [L]
 
   RewriteCond %{REQUEST_FILENAME} -f [OR]

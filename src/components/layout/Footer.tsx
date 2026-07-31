@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from 'react'
 import { Link } from 'react-router-dom'
 import { Mail, MapPin, Phone, ArrowRight } from 'lucide-react'
+import { Logo } from '@/components/ui/Logo'
 
 export function Footer() {
   const [email, setEmail] = useState('')
@@ -21,13 +22,10 @@ export function Footer() {
       <div className="relative mx-auto max-w-7xl px-4 pt-16 pb-8 sm:px-6">
         <div className="grid gap-10 lg:grid-cols-[1.3fr_1fr_1fr_1.2fr]">
           <div>
-            <div className="mb-4 flex items-center gap-3">
-              <span className="grid h-11 w-11 place-items-center rounded-xl bg-accent font-display text-sm font-bold text-white">
-                SP
-              </span>
-              <span className="font-display text-xl font-semibold">Safe Planet</span>
-            </div>
-            <p className="max-w-sm text-sm leading-relaxed text-white/70">
+            <Link to="/" className="mb-4 inline-block">
+              <Logo className="h-12 sm:h-14" blend />
+            </Link>
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/70">
               Helping Victorian homeowners create more comfortable, energy-efficient homes
               through trusted advice, quality installations, and long-term support.
             </p>

@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import {
   ArrowRight,
-  BadgeCheck,
+  BadgePercent,
   HandCoins,
-  Headphones,
+  Headset,
   ShieldCheck,
 } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
@@ -28,12 +28,12 @@ const values = [
     text: 'No hidden costs. No unexpected surprises. Just honest advice and clear pricing you can trust.',
   },
   {
-    icon: BadgeCheck,
+    icon: BadgePercent,
     title: 'Rebate support',
     text: 'We’ll help you understand available government rebates and guide you through the process.',
   },
   {
-    icon: Headphones,
+    icon: Headset,
     title: 'Support beyond installation',
     text: 'From first consultation to ongoing support, we’re here whenever you need us.',
   },
@@ -138,7 +138,7 @@ export function HomePage() {
                 <p className="mt-2 text-sm text-muted">Happy customers</p>
               </FadeIn>
               <FadeIn delay={0.08} className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-border">
-                <Counter to={8} suffix="+" />
+                <Counter to={9} suffix="+" />
                 <p className="mt-2 text-sm text-muted">Years of experience</p>
               </FadeIn>
             </div>
