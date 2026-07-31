@@ -8,9 +8,12 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-dist
 dist-ssr
 *.local
+
+# Keep production build in repo for AWS deploy (local → GitHub → server)
+# dist/ is committed on purpose
+!dist/
 
 # Editor directories and files
 .vscode/*
