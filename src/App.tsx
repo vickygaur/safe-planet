@@ -6,7 +6,7 @@ import { AboutPage } from '@/pages/AboutPage'
 import { ContactPage } from '@/pages/ContactPage'
 import { ServicePage } from '@/pages/ServicePage'
 import { airconFaqs, hotWaterFaqs, solarFaqs } from '@/data/faqs'
-import { images } from '@/data/images'
+import { siteImages } from '@/data/images'
 import { getRouterBasename } from '@/lib/basePath'
 
 export default function App() {
@@ -37,8 +37,8 @@ export default function App() {
                   product="Aircon"
                   ctaTitle="Stay Comfortable All Year Round"
                   ctaText="Whether you're upgrading an old system or installing air conditioning for the first time, our team is here to help. We'll recommend the right solution for your home, answer your questions, and provide expert advice with no pressure or obligation."
-                  heroImage={images.aircon}
-                  sideImage={images.airconInstall}
+                  heroImage={siteImages.aircon.banner}
+                  sideImage={siteImages.aircon.content}
                 />
               }
             />
@@ -59,8 +59,8 @@ export default function App() {
                   product="Hot Water Heat Pump"
                   ctaTitle="Ready to Upgrade Your Hot Water System?"
                   ctaText="Tell us about your home, and we'll help you choose the right heat pump hot water system for your needs. From expert advice and rebate guidance to professional installation, we'll make the entire process simple and stress-free."
-                  heroImage={images.hotWater}
-                  sideImage={images.living}
+                  heroImage={siteImages.hotWater.banner}
+                  sideImage={siteImages.hotWater.content}
                 />
               }
             />
@@ -81,8 +81,8 @@ export default function App() {
                   product="Solar Batteries"
                   ctaTitle="Let's Find the Right Solar Battery Solution for Your Home"
                   ctaText="Whether you're adding a battery to your existing solar system or planning a complete home energy upgrade, we're here to help. Tell us about your home, and our team will recommend the right battery solution to help you store more energy, reduce your reliance on the grid, and get the most from your solar investment."
-                  heroImage={images.solar}
-                  sideImage={images.family}
+                  heroImage={siteImages.solar.banner}
+                  sideImage={siteImages.solar.content}
                 />
               }
             />

@@ -3,6 +3,7 @@ import { SectionHeading, FadeIn } from '@/components/ui/SectionHeading'
 import { LeadForm } from '@/components/ui/LeadForm'
 import { FAQ } from '@/components/ui/FAQ'
 import { Button } from '@/components/ui/Button'
+import { SiteImage } from '@/components/ui/SiteImage'
 import { ArrowRight } from 'lucide-react'
 
 type Props = {
@@ -33,11 +34,12 @@ export function ServicePage({
   return (
     <>
       <section className="relative isolate min-h-[58vh] overflow-hidden pt-24">
-        <img
+        <SiteImage
           src={heroImage}
           alt={eyebrow}
-          className="absolute inset-0 h-full w-full object-cover"
+          fit="banner"
           loading="eager"
+          className="absolute inset-0"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0a2a28]/82 to-[#0a2a28]/30" />
         <div className="relative mx-auto flex min-h-[46vh] max-w-7xl flex-col justify-end gap-6 px-4 pb-14 sm:px-6">
@@ -61,11 +63,11 @@ export function ServicePage({
         <div className="grid items-start gap-10 lg:grid-cols-[1.2fr_0.8fr]">
           <div className="space-y-6">
             <FadeIn>
-              <img
+              <SiteImage
                 src={sideImage}
-                alt=""
-                className="aspect-[16/10] w-full rounded-[2rem] object-cover shadow-md ring-1 ring-border"
-                loading="lazy"
+                alt={eyebrow}
+                fit="square"
+                className="aspect-square rounded-[2rem] shadow-md ring-1 ring-border"
               />
             </FadeIn>
             {paragraphs.map((p, i) => (

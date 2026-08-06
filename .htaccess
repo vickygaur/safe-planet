@@ -9,9 +9,13 @@ DirectoryIndex index.php
   RewriteRule ^api/ - [L]
   RewriteRule ^admin/ - [L]
 
-  # Prefer copied root assets, then dist assets
+  # Built JS/CSS
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteRule ^assets/(.*)$ dist/assets/$1 [L]
+
+  # Site photos from public/images → dist/images after build
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^images/(.*)$ dist/images/$1 [L]
 
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteRule ^favicon\.png$ dist/favicon.png [L]

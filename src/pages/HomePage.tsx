@@ -13,8 +13,9 @@ import { Counter } from '@/components/ui/Counter'
 import { LeadForm } from '@/components/ui/LeadForm'
 import { FAQ } from '@/components/ui/FAQ'
 import { Testimonials } from '@/components/sections/Testimonials'
+import { SiteImage } from '@/components/ui/SiteImage'
 import { homeFaqs } from '@/data/faqs'
-import { images } from '@/data/images'
+import { siteImages } from '@/data/images'
 
 const values = [
   {
@@ -44,19 +45,19 @@ const services = [
     title: 'Air Conditioning',
     text: 'Stay comfortable all year with energy-efficient reverse cycle systems, chosen and installed for your home.',
     href: '/services/air-conditioning',
-    image: images.aircon,
+    image: siteImages.aircon.card,
   },
   {
     title: 'Hot Water Systems',
     text: 'Replace your old system with an energy-efficient heat pump. Reliable hot water, lower running costs.',
     href: '/services/hot-water',
-    image: images.hotWater,
+    image: siteImages.hotWater.card,
   },
   {
     title: 'Solar Battery',
     text: 'Store more of your solar energy, lower bills, and take greater control of your home’s power.',
     href: '/services/solar-batteries',
-    image: images.solar,
+    image: siteImages.solar.card,
   },
 ]
 
@@ -78,12 +79,13 @@ const reasons = [
 export function HomePage() {
   return (
     <>
-      {/* Full-bleed photo hero */}
       <section className="relative isolate min-h-[100svh] overflow-hidden">
-        <img
-          src={images.hero}
-          alt="Modern comfortable Victorian home"
-          className="absolute inset-0 h-full w-full object-cover"
+        <SiteImage
+          src={siteImages.home.banner}
+          alt="Safe Planet home energy upgrades"
+          fit="banner"
+          loading="eager"
+          className="absolute inset-0"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0a2a28]/85 via-[#0a2a28]/55 to-[#0a2a28]/25" />
         <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-end px-4 pb-16 pt-28 sm:px-6 lg:justify-center lg:pb-24">
@@ -144,13 +146,12 @@ export function HomePage() {
             </div>
           </div>
           <FadeIn>
-            <div className="overflow-hidden rounded-[2rem] shadow-lg ring-1 ring-border">
-              <img
-                src={images.living}
-                alt="Bright, comfortable living room"
-                className="aspect-[4/3] w-full object-cover"
-              />
-            </div>
+            <SiteImage
+              src={siteImages.home.livingSection}
+              alt="Bright, comfortable living room"
+              fit="landscape"
+              className="aspect-[16/10] rounded-[2rem] shadow-lg ring-1 ring-border"
+            />
           </FadeIn>
         </div>
 
@@ -178,14 +179,16 @@ export function HomePage() {
           <div className="grid gap-6 lg:grid-cols-3">
             {services.map((s, i) => (
               <FadeIn key={s.title} delay={i * 0.08}>
-                <Link to={s.href} className="group block overflow-hidden rounded-[1.75rem] bg-bg shadow-sm ring-1 ring-border transition hover:-translate-y-1 hover:shadow-md">
-                  <div className="aspect-[16/11] overflow-hidden">
-                    <img
-                      src={s.image}
-                      alt={s.title}
-                      className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                    />
-                  </div>
+                <Link
+                  to={s.href}
+                  className="group block overflow-hidden rounded-[1.75rem] bg-bg shadow-sm ring-1 ring-border transition hover:-translate-y-1 hover:shadow-md"
+                >
+                  <SiteImage
+                    src={s.image}
+                    alt={s.title}
+                    fit="square"
+                    className="aspect-square"
+                  />
                   <div className="p-6">
                     <h3 className="font-display text-2xl font-semibold">{s.title}</h3>
                     <p className="mt-2 text-sm leading-relaxed text-muted">{s.text}</p>
@@ -225,14 +228,14 @@ export function HomePage() {
       </section>
 
       <FAQ items={homeFaqs} />
-
       <Testimonials />
 
       <section className="relative overflow-hidden border-t border-border">
-        <img
-          src={images.family}
+        <SiteImage
+          src={siteImages.home.ctaBackground}
           alt=""
-          className="absolute inset-0 h-full w-full object-cover opacity-20"
+          fit="banner"
+          className="absolute inset-0 opacity-20"
         />
         <div className="relative mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 px-4 py-16 sm:px-6 md:flex-row md:items-center">
           <div>

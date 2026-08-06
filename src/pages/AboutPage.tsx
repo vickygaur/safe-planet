@@ -5,8 +5,9 @@ import { Counter } from '@/components/ui/Counter'
 import { FAQ } from '@/components/ui/FAQ'
 import { Button } from '@/components/ui/Button'
 import { Testimonials } from '@/components/sections/Testimonials'
+import { SiteImage } from '@/components/ui/SiteImage'
 import { aboutFaqs } from '@/data/faqs'
-import { images } from '@/data/images'
+import { siteImages } from '@/data/images'
 
 const pillars = [
   {
@@ -53,12 +54,13 @@ const steps = [
 export function AboutPage() {
   return (
     <>
-      {/* Hero */}
       <section className="relative isolate min-h-[62vh] overflow-hidden pt-24">
-        <img
-          src={images.team}
+        <SiteImage
+          src={siteImages.about.banner}
           alt="Safe Planet installation team"
-          className="absolute inset-0 h-full w-full object-cover"
+          fit="banner"
+          loading="eager"
+          className="absolute inset-0"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0a2a28]/85 via-[#0a2a28]/55 to-[#0a2a28]/25" />
         <div className="relative mx-auto flex min-h-[50vh] max-w-7xl flex-col justify-end px-4 pb-14 sm:px-6">
@@ -83,7 +85,6 @@ export function AboutPage() {
         </div>
       </section>
 
-      {/* Pillars */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-20">
         <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
           {pillars.map((p, i) => (
@@ -98,7 +99,6 @@ export function AboutPage() {
         </div>
       </section>
 
-      {/* What We Do */}
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2">
           <div>
@@ -125,13 +125,12 @@ export function AboutPage() {
             </div>
           </div>
           <FadeIn>
-            <div className="overflow-hidden rounded-[2rem] shadow-md ring-1 ring-border">
-              <img
-                src={images.airconInstall}
-                alt="Professional home upgrade installation"
-                className="aspect-[4/3] w-full object-cover"
-              />
-            </div>
+            <SiteImage
+              src={siteImages.about.whatWeDo}
+              alt="Professional home upgrade installation"
+              fit="square"
+              className="aspect-square rounded-[2rem] shadow-md ring-1 ring-border"
+            />
           </FadeIn>
         </div>
 
@@ -152,7 +151,6 @@ export function AboutPage() {
         </div>
       </section>
 
-      {/* Process */}
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="grid items-end gap-8 lg:grid-cols-[1.1fr_0.9fr]">
@@ -162,10 +160,11 @@ export function AboutPage() {
               description="From your first enquiry to the final installation, we’ll guide you through every step. You’ll always know what to expect, with honest advice, clear communication, and support throughout the process."
             />
             <FadeIn>
-              <img
-                src={images.living}
+              <SiteImage
+                src={siteImages.about.process}
                 alt="Comfortable upgraded home"
-                className="aspect-[16/10] w-full rounded-[1.75rem] object-cover shadow-sm ring-1 ring-border"
+                fit="landscape"
+                className="aspect-[16/10] rounded-[1.75rem] shadow-sm ring-1 ring-border"
               />
             </FadeIn>
           </div>
