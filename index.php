@@ -22,6 +22,11 @@ if ($basePath === '' || $basePath === '.' || $basePath === '/') {
 $html = file_get_contents($distIndex);
 $html = str_replace(' crossorigin', '', $html);
 
+// Nginx on AWS often cannot serve /assets via symlink (.htaccess is Apache-only).
+// Real files live under /dist/assets/ which nginx already serves correctly.
+$html = str_replace('="/assets/', '="/dist/assets/', $html);
+$html = str_replace("='/assets/", "='/dist/assets/", $html);
+
 // Rewrite root-absolute asset URLs for subdirectory installs
 if ($basePath !== '/') {
     $html = preg_replace('#\b(href|src)="/(?!/)#', '$1="' . $basePath, $html);
