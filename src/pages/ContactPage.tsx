@@ -1,7 +1,8 @@
 import { MapPin, Phone, Mail, Clock } from 'lucide-react'
 import { SectionHeading, FadeIn } from '@/components/ui/SectionHeading'
 import { LeadForm } from '@/components/ui/LeadForm'
-import { images } from '@/data/images'
+import { SiteImage } from '@/components/ui/SiteImage'
+import { siteImages } from '@/data/images'
 
 const MAP_EMBED =
   'https://maps.google.com/maps?q=262%20Mandalay%20Circuit%2C%20Beveridge%20VIC%203753&t=&z=14&ie=UTF8&iwloc=&output=embed'
@@ -12,15 +13,17 @@ const FACILITY_MAP =
 export function ContactPage() {
   return (
     <>
-      <section className="relative isolate min-h-[50vh] overflow-hidden pt-24">
-        <img
-          src={images.family}
-          alt="Victorian family home"
-          className="absolute inset-0 h-full w-full object-cover"
+      <section className="relative isolate min-h-[70vh] overflow-hidden pt-24 sm:min-h-[75vh]">
+        <SiteImage
+          src={siteImages.contact.banner}
+          alt="Contact Safe Planet"
+          fit="banner"
           loading="eager"
+          className="absolute inset-0"
+          imgClassName="object-[center_25%]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a2a28]/80 to-[#0a2a28]/35" />
-        <div className="relative mx-auto flex min-h-[38vh] max-w-7xl items-end px-4 pb-12 sm:px-6">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a2a28]/85 via-[#0a2a28]/50 to-[#0a2a28]/20" />
+        <div className="relative mx-auto flex min-h-[56vh] max-w-7xl flex-col justify-end px-4 pb-14 pt-10 sm:px-6 sm:min-h-[60vh]">
           <SectionHeading
             eyebrow="Contact our experts"
             title="Let’s find the right energy solution for your home"
@@ -67,14 +70,12 @@ export function ContactPage() {
             </div>
           </FadeIn>
           <FadeIn delay={0.08}>
-            <div className="overflow-hidden rounded-3xl shadow-sm ring-1 ring-border">
-              <img
-                src={images.facility}
-                alt="Safe Planet service coverage"
-                className="aspect-[16/10] w-full object-cover"
-                loading="lazy"
-              />
-            </div>
+            <SiteImage
+              src={siteImages.contact.side}
+              alt="Safe Planet service coverage"
+              fit="landscape"
+              className="aspect-[16/10] rounded-3xl shadow-sm ring-1 ring-border"
+            />
           </FadeIn>
         </div>
         <FadeIn delay={0.05}>

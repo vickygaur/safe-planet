@@ -23,7 +23,7 @@ export function Footer() {
         <div className="grid gap-10 lg:grid-cols-[1.3fr_1fr_1fr_1.2fr]">
           <div>
             <Link to="/" className="mb-4 inline-block">
-              <Logo className="h-12 sm:h-14" blend />
+              <Logo className="h-12 sm:h-14" />
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/70">
               Helping Victorian homeowners create more comfortable, energy-efficient homes

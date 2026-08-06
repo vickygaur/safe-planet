@@ -55,7 +55,7 @@ export function NavHeader() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 sm:px-6">
         <Link to="/" className="group flex shrink-0 items-center">
-          <Logo className="h-14 sm:h-16 md:h-[4.5rem]" blend />
+          <Logo className="h-14 sm:h-16 md:h-[4.25rem]" />
         </Link>
 
         <nav
