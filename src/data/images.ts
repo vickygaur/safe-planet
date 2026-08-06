@@ -35,7 +35,13 @@ export function resolveImage(pathOrUrl: string) {
   if (pathOrUrl.startsWith('http://') || pathOrUrl.startsWith('https://')) {
     return pathOrUrl
   }
-  return assetUrl(pathOrUrl)
+  const clean = pathOrUrl.replace(/^\/+/, '')
+  // Files live in public/images locally. After build they are in dist/images.
+  // On AWS nginx, /images/* falls through to PHP (HTML). /dist/images/* works.
+  if (import.meta.env.PROD && clean.startsWith('images/')) {
+    return assetUrl(`dist/${clean}`)
+  }
+  return assetUrl(clean)
 }
 
 export const siteImages = {
