@@ -47,9 +47,9 @@ export function resolveImage(pathOrUrl: string) {
 export const siteImages = {
   home: {
     /** Banner 1920×1080 */
-    banner: path('home-banner.jpeg'),
+    banner: path('HOME-PAGE-BANNER.webp'),
     /** Landscape 1600×1000 */
-    livingSection: path('living.jpg'),
+    livingSection: path('living3.webp'),
     /** Banner 1920×1080 */
     ctaBackground: path('contact-banner.jpeg'),
   },
@@ -69,19 +69,19 @@ export const siteImages = {
   },
   aircon: {
     /** Square 1200×1200 — home card */
-    card: path('AC.jpeg'),
+    card: path('Aircon.webp'),
     /** Banner 1920×1080 — detail hero */
-    banner: path('air-condition-banner.jpeg'),
+    banner: path('AIRCON-BANNER-IMAGE.webp'),
     /** Square 1200×1200 — detail content */
-    content: path('AC.jpeg'),
+    content: path('Aircon.webp'),
   },
   hotWater: {
     /** Square 1200×1200 */
-    card: path('hot-water.jpeg'),
+    card: path('Heat-Pump.webp'),
     /** Banner 1920×1080 */
-    banner: path('hot-water-banner.jpeg'),
+    banner: path('HEAT-PUMP-BANNER.webp'),
     /** Square 1200×1200 */
-    content: path('hot-water.jpeg'),
+    content: path('Heat-Pump.webp'),
   },
   solar: {
     /** Square 1200×1200 */

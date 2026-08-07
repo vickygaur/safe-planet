@@ -149,8 +149,8 @@ export function HomePage() {
             <SiteImage
               src={siteImages.home.livingSection}
               alt="Bright, comfortable living room"
-              fit="landscape"
-              className="aspect-[16/10] rounded-[2rem] shadow-lg ring-1 ring-border"
+              fit="square"
+              className="aspect-square rounded-[2rem] shadow-md ring-1 ring-border"
             />
           </FadeIn>
         </div>
