@@ -43,6 +43,8 @@ export function NavHeader() {
   }, [hovered, location.pathname])
 
   const onHero = location.pathname === '/' && !scrolled
+  const activeHref =
+    hovered ?? links.find((l) => location.pathname.startsWith(l.href))?.href ?? null
 
   return (
     <header
@@ -75,26 +77,31 @@ export function NavHeader() {
             animate={pos}
             transition={{ type: 'spring', stiffness: 380, damping: 30 }}
           />
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              to={link.href}
-              ref={(el) => {
-                refs.current[link.href] = el
-              }}
-              onMouseEnter={() => setHovered(link.href)}
-              className={cn(
-                'relative z-10 px-3.5 py-2 text-sm font-medium transition-colors',
-                onHero
-                  ? 'text-white mix-blend-difference'
-                  : hovered === link.href || location.pathname.startsWith(link.href)
-                    ? 'text-white'
-                    : 'text-text',
-              )}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {links.map((link) => {
+            const underPill = activeHref === link.href
+            return (
+              <Link
+                key={link.href}
+                to={link.href}
+                ref={(el) => {
+                  refs.current[link.href] = el
+                }}
+                onMouseEnter={() => setHovered(link.href)}
+                className={cn(
+                  'relative z-10 px-3.5 py-2 text-sm font-medium transition-colors',
+                  onHero
+                    ? underPill
+                      ? 'text-text'
+                      : 'text-white'
+                    : underPill
+                      ? 'text-white'
+                      : 'text-text',
+                )}
+              >
+                {link.label}
+              </Link>
+            )
+          })}
         </nav>
 
         <div className="flex items-center gap-2 sm:gap-3">
