@@ -96,24 +96,26 @@ export function LeadForm({
               {errors.product && <span className="text-xs text-red-500">{errors.product}</span>}
             </label>
 
-            <div className={`grid gap-4 ${compact ? '' : 'sm:grid-cols-2'}`}>
-              <label className="grid gap-1.5 text-sm">
+            <div
+              className={`grid gap-4 ${compact ? 'grid-cols-1' : 'grid-cols-1 sm:grid-cols-2'}`}
+            >
+              <label className="grid min-w-0 gap-1.5 text-sm">
                 <span className="text-muted">Name</span>
                 <input
                   required
                   value={form.name}
                   onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
-                  className="h-11 rounded-2xl border border-border-strong bg-bg-elevated px-4 outline-none focus:border-accent"
+                  className="h-11 w-full min-w-0 rounded-2xl border border-border-strong bg-bg-elevated px-4 outline-none focus:border-accent"
                 />
                 {errors.name && <span className="text-xs text-red-500">{errors.name}</span>}
               </label>
-              <label className="grid gap-1.5 text-sm">
+              <label className="grid min-w-0 gap-1.5 text-sm">
                 <span className="text-muted">Phone</span>
                 <input
                   required
                   value={form.phone}
                   onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
-                  className="h-11 rounded-2xl border border-border-strong bg-bg-elevated px-4 outline-none focus:border-accent"
+                  className="h-11 w-full min-w-0 rounded-2xl border border-border-strong bg-bg-elevated px-4 outline-none focus:border-accent"
                 />
                 {errors.phone && <span className="text-xs text-red-500">{errors.phone}</span>}
               </label>

@@ -1,29 +1,25 @@
 import { motion } from 'framer-motion'
-import { Star } from 'lucide-react'
+import { Star, User } from 'lucide-react'
 import { FadeIn } from '@/components/ui/SectionHeading'
-import { avatars } from '@/data/images'
 
 const testimonials = [
   {
-    name: 'Sarah M.',
-    place: 'Melbourne',
-    avatar: avatars.sarah,
+    name: 'Matthew Jayopen',
+    place: 'Victoria',
     quote:
-      'From the initial consultation through to installation, the entire process was smooth and professional. The team explained every option clearly and helped us understand available rebates.',
+      'I Recently had my Gas ducted heater upgraded to energy efficient split systems throughout the home. Could not be more pleased from the process from start to finish. A big thank you to the whole team and would certainly recommend.',
   },
   {
-    name: 'James T.',
-    place: 'Geelong',
-    avatar: avatars.james,
+    name: 'Bob Farmer',
+    place: 'Victoria',
     quote:
-      'Honest advice and no pressure. They recommended the right reverse cycle system for our home and the install was done carefully in a day. Already noticing better comfort.',
+      'Had the team from Safe Planet remove my old heating system and replace it with a heating/cooling system. Done in a day, minor complications but nothing phased the guys and all sorted. Since installing the system it has been a delight, no issues, easy to use and keeps the home cosy warm. Can\'t beat this service, recommended to all our friends.',
   },
   {
-    name: 'Priya K.',
-    place: 'Point Cook',
-    avatar: avatars.priya,
+    name: 'Sukham Kaur',
+    place: 'Victoria',
     quote:
-      'Safe Planet helped us with the heat pump upgrade and rebate paperwork. Clear pricing, friendly team, and great follow-up after the job was finished.',
+      'Had our old gas ducted heating system replaced with a new Midea system by the Safe Planet team. They did a fantastic job from start to finish. The installation was smooth, professional, and we\'re very happy with the outcome. Highly recommend!',
   },
 ]
 
@@ -64,7 +60,7 @@ export function Testimonials() {
               <div className="pb-1">
                 <Stars />
                 <p className="mt-1 text-xs font-medium tracking-wide text-muted uppercase">
-                  ( 129+ reviews )
+                  ( 55+ reviews )
                 </p>
               </div>
             </div>
@@ -91,11 +87,12 @@ export function Testimonials() {
                 className="flex h-full flex-col rounded-3xl bg-white p-6 shadow-sm ring-1 ring-border sm:p-7"
               >
                 <header className="mb-5 flex items-center gap-3">
-                  <img
-                    src={t.avatar}
-                    alt=""
-                    className="h-11 w-11 rounded-full object-cover ring-2 ring-sky"
-                  />
+                  <div
+                    aria-hidden
+                    className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-sky text-accent ring-2 ring-sky"
+                  >
+                    <User className="h-5 w-5" strokeWidth={2} />
+                  </div>
                   <div>
                     <p className="font-sans text-sm font-semibold text-text">{t.name}</p>
                     <p className="text-xs text-muted">{t.place}</p>
