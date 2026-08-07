@@ -57,7 +57,7 @@ export const siteImages = {
     /** Banner 1920×1080 */
     banner: path('about-banner.jpeg'),
     /** Square 1200×1200 */
-    whatWeDo: path('what-we-do.jpeg'),
+    whatWeDo: path('living2.webp'),
     /** Landscape 1600×1000 */
     process: path('living.jpg'),
   },
@@ -65,7 +65,7 @@ export const siteImages = {
     /** Banner 1920×1080 */
     banner: path('contact-banner.jpeg'),
     /** Landscape 1600×1000 */
-    side: path('living.jpg'),
+    side: path('CONTACT.webp'),
   },
   aircon: {
     /** Square 1200×1200 — home card */
@@ -87,7 +87,7 @@ export const siteImages = {
     /** Square 1200×1200 */
     card: path('solar-battery.jpeg'),
     /** Banner 1920×1080 */
-    banner: path('solar-battery-banner.jpeg'),
+    banner: path('SOLAR-BATTERIES-BANNER.webp'),
     /** Square 1200×1200 */
     content: path('solar-battery.jpeg'),
   },

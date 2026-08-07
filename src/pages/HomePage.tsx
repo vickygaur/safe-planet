@@ -150,7 +150,7 @@ export function HomePage() {
               src={siteImages.home.livingSection}
               alt="Bright, comfortable living room"
               fit="square"
-              className="aspect-square rounded-[2rem] shadow-md ring-1 ring-border"
+              className="mx-auto aspect-square w-[90%] rounded-[2rem] shadow-md ring-1 ring-border"
             />
           </FadeIn>
         </div>
