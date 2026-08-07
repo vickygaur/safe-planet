@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, BadgeCheck, Droplets, HeartHandshake, Shield, Snowflake, Wrench } from 'lucide-react'
+import { ArrowRight, BadgeCheck, Battery, Droplets, HeartHandshake, Shield, Snowflake, Wrench } from 'lucide-react'
 import { FadeIn, SectionHeading } from '@/components/ui/SectionHeading'
 import { Counter } from '@/components/ui/Counter'
 import { FAQ } from '@/components/ui/FAQ'
@@ -105,7 +105,7 @@ export function AboutPage() {
             <SectionHeading
               eyebrow="What We Do"
               title="Helping homeowners upgrade their homes with confidence"
-              description="We specialise in heat pump installation and reverse cycle air conditioning installation, helping homeowners across Melbourne and Victoria make confident home upgrades. From honest advice and professional installation to ongoing support, we make every home upgrade simple, affordable, and designed for long-term comfort and savings."
+              description="We specialise in heat pump hot water, reverse cycle air conditioning, and solar battery installation, helping homeowners across Melbourne and Victoria make confident home upgrades. From honest advice and professional installation to ongoing support, we make every home upgrade simple, affordable, and designed for long-term comfort and savings."
             />
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to="/services/hot-water">
@@ -119,6 +119,13 @@ export function AboutPage() {
                 <Button>
                   <Snowflake className="h-4 w-4" />
                   Air Conditioning
+                  <ArrowRight className="h-4 w-4" />
+                </Button>
+              </Link>
+              <Link to="/services/solar-batteries">
+                <Button variant="secondary">
+                  <Battery className="h-4 w-4 text-accent" />
+                  Solar Batteries
                   <ArrowRight className="h-4 w-4" />
                 </Button>
               </Link>
