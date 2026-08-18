@@ -44,8 +44,8 @@ export function ContactPage() {
               <ul className="mt-6 space-y-4 text-sm text-muted">
                 <li className="flex gap-3">
                   <Phone className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
-                  <a href="tel:0414501851" className="hover:text-text">
-                    0414 501 851
+                  <a href="tel:468054137" className="hover:text-text">
+                    468 054 137
                   </a>
                 </li>
                 <li className="flex gap-3">

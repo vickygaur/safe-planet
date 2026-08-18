@@ -112,13 +112,13 @@ export function HomePage() {
                   <ArrowRight className="h-4 w-4" />
                 </Button>
               </Link>
-              <a href="tel:0414501851">
+              <a href="tel:468054137">
                 <Button
                   size="lg"
                   variant="secondary"
                   className="border-white/40 bg-white/15 text-white hover:bg-white/25"
                 >
-                  Call 0414 501 851
+                  Call 468 054 137
                 </Button>
               </a>
             </div>
