@@ -30,11 +30,11 @@ export function Footer() {
               through trusted advice, quality installations, and long-term support.
             </p>
             <a
-              href="tel:0414501851"
+              href="tel:468054137"
               className="mt-6 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-white ring-1 ring-white/15 transition hover:bg-white/15"
             >
               <Phone className="h-4 w-4 text-accent-2" />
-              0414 501 851
+              468 054 137
             </a>
           </div>
 

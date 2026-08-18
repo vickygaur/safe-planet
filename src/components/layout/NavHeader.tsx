@@ -106,7 +106,7 @@ export function NavHeader() {
 
         <div className="flex items-center gap-2 sm:gap-3">
           <a
-            href="tel:0414501851"
+            href="tel:468054137"
             className={cn(
               'hidden items-center gap-2 rounded-full px-3 py-2 text-sm font-semibold sm:inline-flex',
               onHero
@@ -115,7 +115,7 @@ export function NavHeader() {
             )}
           >
             <Phone className="h-3.5 w-3.5 text-accent" />
-            0414 501 851
+            468 054 137
           </a>
           <Link
             to="/contact"
