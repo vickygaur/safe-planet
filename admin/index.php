@@ -92,7 +92,7 @@ $counts = $db->query("
       <table>
         <thead>
           <tr>
-            <th>ID</th>
+            <th>Sr. No.</th>
             <th>Date</th>
             <th>Name</th>
             <th>Contact</th>
@@ -106,10 +106,10 @@ $counts = $db->query("
           <?php if (!$leads): ?>
             <tr><td colspan="8" class="empty">No leads yet. Enquiries from the website will appear here.</td></tr>
           <?php endif; ?>
-          <?php foreach ($leads as $lead): ?>
+          <?php foreach ($leads as $index => $lead): ?>
             <tr class="status-<?= htmlspecialchars($lead['status']) ?>">
-              <td>#<?= (int)$lead['id'] ?></td>
-              <td><?= htmlspecialchars(date('d M Y H:i', strtotime($lead['created_at']))) ?></td>
+              <td><?= $index + 1 ?></td>
+              <td><?= htmlspecialchars(date('d M Y', strtotime($lead['created_at']))) ?></td>
               <td><?= htmlspecialchars($lead['name']) ?></td>
               <td>
                 <a href="mailto:<?= htmlspecialchars($lead['email']) ?>"><?= htmlspecialchars($lead['email']) ?></a><br />
